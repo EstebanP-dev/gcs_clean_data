@@ -1,5 +1,7 @@
+from typing_extensions import Self
+
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, Any
 from datetime import datetime
 
 from primitives import *
@@ -30,7 +32,6 @@ class Diagnostic(BaseModel):
     def validate_temperature(self) -> Result[Success]:
         if self.temperature is None:
             return Result.failure(Error.validation("Temperature is required"))
-
         if not (-100 <= self.temperature <= 100):
             return Result.failure(Error.validation("Temperature must be between -100 and 100"))
 
