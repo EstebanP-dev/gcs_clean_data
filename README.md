@@ -39,6 +39,7 @@ DATABASE_PORT='5432'
 Inicia el entorno virtual y instala las dependencias:
 
 ```bash
+pipenv shell
 pipenv install --dev
 ```
 
@@ -106,6 +107,20 @@ Para ejecutar las pruebas del proyecto:
 
 ```bash
 pipenv run python manage.py test
+```
+
+## Base de Datos
+
+Para hacer la conexión con la base de datos MYSQL, hay dos alternativas o creas la base de datos con el docker-compose o cambias los valores en el .env del proyecto para apuntar a tu base de datos local.
+
+### Docker
+
+```bash
+docker-compose build
+```
+
+```bash
+docker-compose up -d
 ```
 
 ## Recursos Adicionales

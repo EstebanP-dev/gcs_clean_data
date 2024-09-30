@@ -1,0 +1,11 @@
+services:
+  database:
+    image: mysql:latest
+    container_name: GCS.Database
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=app_monitoring
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./mysql:/var/lib/mysql
