@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     function fetchGetGPS() {
-        fetch('http://127.0.0.1:8000/sensordata/getlatest/')  // Asegúrate de que esta URL coincide con tu ruta en Django
-            .then(response => response.json())
+        fetch(GET_LATEST_SENSOR_DATA_URL)  // Usar la variable definida en el HTML
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 updateMap(data);
             })
@@ -58,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Inicializar la primera llamada para evitar esperar el primer intervalo
     fetchGetGPS();
-    setInterval(fetchGetGPS, 4000);
+
+    // Configurar el intervalo de actualización usando la variable de Django
+    setInterval(fetchGetGPS, UPDATE_INTERVAL);
 });

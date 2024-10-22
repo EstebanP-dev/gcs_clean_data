@@ -1,4 +1,7 @@
-{% extends "core/base.html" %} {% block content %}
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
 
 <section class="charts-container">
   <div class="chart">
@@ -24,6 +27,9 @@
 {% endblock %} {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-boxplot@0.2.0/dist/chartjs-chart-boxplot.min.js"></script>
-<script src="../../static/js/variables.js"></script>
-
+<script src="{% static 'js/variables.js' %}"></script>
+<script>
+  const UPDATE_INTERVAL = {{ update_interval }};
+  const GET_LATEST_SENSOR_DATA_URL = "{% url 'sensor_data:get_latest' %}";
+</script>
 {% endblock %}

@@ -1,4 +1,7 @@
-{% extends "core/base.html" %} {% block content %}
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
 
 <header class="header">
   <h1>Dashboard de Monitoreo</h1>
@@ -19,8 +22,10 @@
   </div>
 </section>
 
-{% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-boxplot@0.2.0/dist/chartjs-chart-boxplot.min.js"></script>
-<script src="../../static/js/indicators.js"></script>
+<script src="{% static 'js/indicators.js' %}"></script>
 {% endblock %}

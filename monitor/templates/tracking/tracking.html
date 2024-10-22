@@ -1,9 +1,14 @@
-{% extends "core/base.html" %} {% block styles %}
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block styles %}
 <link
   rel="stylesheet"
   href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 />
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 
 <header class="header">
   <h1>Mapa de Monitoreo</h1>
@@ -11,7 +16,13 @@
 
 <section id="map"></section>
 
-{% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="../../static/js/tracking.js"></script>
+<script src="{% static 'js/tracking.js' %}"></script>
+<script>
+  const UPDATE_INTERVAL = {{ update_interval }};
+  const GET_LATEST_SENSOR_DATA_URL = "{% url 'sensor_data:get_latest' %}";
+</script>
 {% endblock %}
