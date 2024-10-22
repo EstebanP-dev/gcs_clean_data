@@ -53,6 +53,12 @@ Ejecuta las migraciones de la base de datos:
 pipenv run python manage.py migrate
 ```
 
+## Crear usuario para Log In
+
+```bash
+python manage.py createsuperuser
+```
+
 ## Ejecución del Servidor de Desarrollo
 
 Para iniciar el servidor de desarrollo de Django:
@@ -60,6 +66,14 @@ Para iniciar el servidor de desarrollo de Django:
 ```bash
 pipenv run python manage.py runserver
 ```
+
+## Inserción de datos aleatorios
+
+```bash
+python manage.py start_scheduler --interval 3
+```
+
+Siendo `3` el numero de segundos en los que queremos que se ejecute la tarea en bakground.
 
 ## Configuración para Depuración con Visual Studio Code
 

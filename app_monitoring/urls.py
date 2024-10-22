@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
+    path('', include('core.urls')),
+    path('auth/', include('authentication.urls', namespace='authentication')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('data_cleaner/', include('data_cleaner.urls')),
-] + debug_toolbar_urls()
+    path('monitor/', include('monitor.urls', namespace='monitor')),
+    path('sensordata/', include('sensor_data.urls', namespace='sensor_data')),
+]

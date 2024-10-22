@@ -1,0 +1,22 @@
+{% extends "auth/base.html" %} {% block content %}
+
+<form action="" method="post" class="box">
+    {% csrf_token %}
+
+    <h2>Bienvenido</h2>
+    <p>Para ingresar al aplicativo por favor ingrese sus credenciales</p>
+    
+    <div class="input-group">
+        <span class="icon">👤</span>
+        <input type="text" name="username" placeholder='Username' required>
+    </div>
+
+    <div class="input-group">
+        <span class="icon">🔒</span>
+        <input type="password" name="password" placeholder='Password' required>
+    </div>
+
+    <button type="submit" class="btn">Login</button>
+</form>
+
+{% endblock %}

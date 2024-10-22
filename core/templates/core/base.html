@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Proyecto ENA</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../static/css/styles.css" />
+    <!-- Bloque para styles adicionales -->
+    {% block styles %}{% endblock %}
+  </head>
+  <body class="container">
+    <header>
+      <h1>Proyecto ENA</h1>
+    </header>
+    <nav class="sidebar">
+      <article class="logo">
+        <h2>Proyecto ENA</h2>
+      </article>
+      <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li>
+          <a href="{% url 'monitor:variables' %}">Monitoreo de Variables</a>
+        </li>
+        <li><a href="{% url 'monitor:tracking' %}">Vista Mapa</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-info">
+      {% if request.user.is_authenticated %}
+      <p>Hola, {{ user.username }}</p>
+      <a class="logout" href="{% url 'authentication:logout' %}">Salir</a>
+      {% endif %}
+    </div>
+
+    <main class="main-content">{% block content %} {% endblock %}</main>
+  </body>
+  <!-- Bloque para scripts adicionales -->
+  {% block scripts %}{% endblock %}
+</html>

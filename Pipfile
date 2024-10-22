@@ -10,6 +10,9 @@ django-environ = "*"
 mysqlclient = "*"
 pandas = "*"
 scipy = "*"
+geocoder = "*"
+geopy = "*"
+django-apscheduler = "*"
 
 [dev-packages]
 
