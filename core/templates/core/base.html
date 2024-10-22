@@ -25,6 +25,10 @@
           <a href="{% url 'monitor:variables' %}">Monitoreo de Variables</a>
         </li>
         <li><a href="{% url 'monitor:tracking' %}">Vista Mapa</a></li>
+
+        {% if request.user.is_superuser %}
+        <li><a href="{% url 'sensor_data:clean_data' %}">Limpiar Datos</a></li>
+        {% endif %}
       </ul>
     </nav>
 

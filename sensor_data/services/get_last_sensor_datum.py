@@ -6,8 +6,6 @@ def get_last_sensor_datum():
     try:
         # Obtener el último registro
         latest_data = SensorData.objects.latest('timestamp')
-
-        print(latest_data.barometro)
         
         data = {
             'timestamp': latest_data.timestamp.isoformat(),

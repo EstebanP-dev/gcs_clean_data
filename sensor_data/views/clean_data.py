@@ -5,6 +5,11 @@ from ..services import *
 
 @login_required
 def clean_data(request):
+    is_superuser = request.user.is_superuser
+
+    if not is_superuser:
+        return JsonResponse({'error': 'Unauthorized'}, status=401)
+
     df = get_sensor_data_as_dataframe()
     if df is None:
         return JsonResponse({'error': 'No se pudieron obtener los datos para limpiar'}, status=500)
