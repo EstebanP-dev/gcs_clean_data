@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 context = {
-    'update_interval': 1000,  # Intervalo en milisegundos (1000 ms = 1 segundo)
+    'update_interval': 4000,  # Intervalo en milisegundos (1000 ms = 1 segundo)
 }
 
 @login_required
