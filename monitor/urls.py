@@ -6,5 +6,7 @@ app_name = 'monitor'
 
 urlpatterns = [
     path('variables/', views.variables, name='variables'),
-    path('tracking/', views.tracking, name='tracking'),
+    path('statistics/', views.statistics, name='statistics'),
+    path('tracking/', views.tracking, name='tracking')
+    
 ]

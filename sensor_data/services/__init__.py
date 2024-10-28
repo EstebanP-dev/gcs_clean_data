@@ -5,3 +5,5 @@ from .get_sensor_data_as_dataframe import *
 from .get_sensor_data import *
 from .insert_clean_data import *
 from .insert_sensor_data import *
+from .get_last_50_sensor_data import *
+from .get_all_sesor_data_cleaned import *
