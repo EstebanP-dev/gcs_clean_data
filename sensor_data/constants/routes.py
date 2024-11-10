@@ -1,3 +1,5 @@
 CLEAN_DATA = 'cleandata/'
 GET_LATEST = 'getlatest/'
 CREATE_DATA = 'create/'
+GET_LATEST50 = 'getlatest50/'
+DATA_CLEANED = 'datacleaned/'
