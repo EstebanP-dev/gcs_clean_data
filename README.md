@@ -45,12 +45,26 @@ pipenv install --dev
 
 Esto instalará todas las dependencias especificadas en el `Pipfile`.
 
+## Base de Datos
+
+Para hacer la conexión con la base de datos MYSQL, hay dos alternativas o creas la base de datos con el docker-compose o cambias los valores en el .env del proyecto para apuntar a tu base de datos local.
+
+### Docker
+
+```bash
+docker-compose build
+```
+
+```bash
+docker-compose up -d
+```
+
 ## Migraciones de Base de Datos
 
 Ejecuta las migraciones de la base de datos:
 
 ```bash
-pipenv run python manage.py migrate
+python manage.py migrate
 ```
 
 ## Crear usuario para Log In
@@ -64,7 +78,7 @@ python manage.py createsuperuser
 Para iniciar el servidor de desarrollo de Django:
 
 ```bash
-pipenv run python manage.py runserver
+python manage.py runserver
 ```
 
 ## Inserción de datos aleatorios
@@ -121,20 +135,6 @@ Para ejecutar las pruebas del proyecto:
 
 ```bash
 pipenv run python manage.py test
-```
-
-## Base de Datos
-
-Para hacer la conexión con la base de datos MYSQL, hay dos alternativas o creas la base de datos con el docker-compose o cambias los valores en el .env del proyecto para apuntar a tu base de datos local.
-
-### Docker
-
-```bash
-docker-compose build
-```
-
-```bash
-docker-compose up -d
 ```
 
 ## Recursos Adicionales

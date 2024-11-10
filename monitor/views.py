@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 context = {
-    'update_interval': 4000,  # Intervalo en milisegundos (1000 ms = 1 segundo)
+    'update_interval': 3000,  # Intervalo en milisegundos (1000 ms = 1 segundo)
 }
 
 @login_required
@@ -12,3 +12,7 @@ def variables(request):
 @login_required
 def tracking(request):
     return render(request, 'tracking/tracking.html', context)
+
+@login_required
+def statistics(request):
+    return render(request, 'statistics/statistics.html', context)

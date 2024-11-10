@@ -7,7 +7,7 @@
     <title>Proyecto ENA</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Bloque para styles adicionales -->
     {% block styles %}{% endblock %}
   </head>
@@ -23,6 +23,9 @@
         <li><a href="{% url 'home' %}">Inicio</a></li>
         <li>
           <a href="{% url 'monitor:variables' %}">Monitoreo de Variables</a>
+        </li>
+        <li>
+          <a href="{% url 'monitor:statistics' %}">Monitoreo de Indicadores</a>
         </li>
         <li><a href="{% url 'monitor:tracking' %}">Vista Mapa</a></li>
 

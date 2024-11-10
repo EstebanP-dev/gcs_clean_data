@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="header">
-    <h1>Dashboard de Monitoreo</h1>
+    <h1>Dashboard de Indicadores</h1>
 </div>
 
 <div class="charts-container">
@@ -28,12 +28,26 @@
     </div>
     <div class="chart">
         <canvas id="barometroChart"></canvas>
+    </div>
+    <div class="chart">
+        <canvas id="ruidoChart"></canvas>
+    </div>
+    <div class="chart">
+        <canvas id="vibracionChart"></canvas>
+    </div>
+    
+    <div class="chart">
+        <h3>Estado de Históricos</h1>
+        <canvas id="sensorDataChart"></canvas>
+    </div>
 
-
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-boxplot@0.2.0/dist/chartjs-chart-boxplot.min.js"></script>
-<script src="{% static 'js/vistaIndicadores.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+<script src="{% static 'js/indicators.js' %}"></script>
+<script>
+  const UPDATE_INTERVAL = {{ update_interval }};
+  const GET_LATEST_SENSOR_DATA_URL = "{% url 'sensor_data:get_latest50' %}";
+</script>
 {% endblock %}
