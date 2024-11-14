@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "sensor_data"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

@@ -13,6 +13,8 @@ scipy = "*"
 geocoder = "*"
 geopy = "*"
 django-apscheduler = "*"
+pytest = "*"
+pytest-django = "*"
 
 [dev-packages]
 
