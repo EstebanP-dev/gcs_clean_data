@@ -13,8 +13,8 @@ def insert_clean_data(data_dict):
         data_dict['gps_lon'] = gps_data['longitude']
 
         # Crear una instancia de SensorDataClean y guardar
-        _ = SensorDataCleaned.objects.create(**data_dict)
-        return data_dict
+        cleaned_data = SensorDataCleaned.objects.create(**data_dict)
+        return cleaned_data
     except Exception as e:
         print(f"Error al guardar en la base de datos: {e}")
         return None
